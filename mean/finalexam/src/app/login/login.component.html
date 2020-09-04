@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="row" style="height: 100vh;">
+        <div class="col">
+            <div class="row " style="height:10%;background: rgb(87, 84, 84);">
+                
+                <div class="col-4 d-flex align-items-center" >
+                    <img src="./assets/pratilipi.png" style="height:50px;width:75px;">
+                </div>
+                <div class="col-4 d-flex justify-content-center align-items-center" style="color: white;font-size: 35px;">
+                    Pratilipi
+                </div>
+            </div>
+            <div class="row" style="height: 90%; background: url('./assets/notebook.jpg');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;">
+                <div class="col-md-3">   
+                </div>
+                <div class="col-md-6">
+                    <div class="row" style="height: 22%;">
+                        <div class="col d-flex justify-content-center align-items-center" style="font-size:25px;font-weight: bold;">
+                            User Login
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-6">   
+                            <div class="row "style="background:rgba(13, 13, 14, 0.432) ;" >
+                                <div class="col mt-2 mb-2" >
+                                    <div [formGroup]="myformgroup">
+                                        <div><b>Username</b></div>
+                                    <input formControlName="username" id="username" type="text" placeholder="Enter Username" class="form-control form-control-sm">
+                                    
+                                    <div style="margin-top:5px;"><b>Password</b></div>
+                                    <input formControlName="password" id="password" type="password" placeholder="Enter Password" class="form-control form-control-sm" >
+                                    
+                                    </div>
+                                    
+                                    <input style="margin-top:5px;" type="checkbox" checked="checked" name="remember"> Remember me<br>
+                                    <button style="margin-top:5px;" [disabled]="!myformgroup.valid" (click)="btnlogin()" type="submit" class="btn btn-dark btn-sm btn-" >Login</button>
+                                   
+                                   <div class="row mt-2">
+                                        <div class="col-7">
+                                            <a style="color: black;" href="/forgotpassword">Forgot Password</a>
+                                        </div>
+                                        <div class="col-5">
+                                            <a style="color: black;" href="/registration">Sign Up</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-center align-items-center " style="background:rgba(248, 245, 245, 0.5) ;font-size:20px;font-weight: bold;">
+                            <a style="color: black" href="">Admin Login Here</a>
+                             
+                         </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-3 ">
+                    
+                
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+
+</div>

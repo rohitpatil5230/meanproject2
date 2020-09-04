@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="row" style="height: 100vh;">
+        <div class="col ">
+            <div class="row " style="height:10%;background: rgb(87, 84, 84);">
+                
+                <div class="col-md-4 d-flex align-items-center" >
+                    <img src="./assets/pratilipi.png" style="height: 50px;width:75px;">
+                </div>
+                <div class="col-md-4 d-flex justify-content-center align-items-center" style="color: white;font-size: 35px;">
+                    Pratilipi
+                </div>
+            </div>
+            <div class="row" style="height: 90%; background: url('./assets/notebook.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;">
+                <div class="col-md-3 col-0">
+                </div>
+                <div class="col-md-6 ">
+                    <div class="row" style="height: 12%;">
+                        <div class="col d-flex justify-content-center align-items-center" style="font-size:25px;font-weight: bold;">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4 mt-5">
+
+                        <div class="col-md-6">
+                            <div class="row " style="background:rgba(13, 13, 14, 0.432) ;">
+                                <div class="col mt-1 mb-1">
+                                    <div [formGroup]="myformgroup">
+                                        <div><b>Name</b></div>
+                                        <input formControlName="name" id="name" type="text" placeholder="Enter Name" class="form-control form-control-sm">
+                                        <div><b>Email</b></div>
+                                        <input formControlName="email" id="email" type="email" placeholder="Enter Email" class="form-control form-control-sm">
+                                        <div><b>Mobile Number</b></div>
+                                        <input formControlName="mobile" id="mobile" type="text" placeholder="Enter Mobile Number" class="form-control form-control-sm">
+                                        <div><b>Username</b></div>
+                                        <input formControlName="username" id="username" type="text" placeholder="Enter Username" class="form-control form-control-sm">
+                                        <div><b>Password</b></div>
+                                        <input formControlName="password" id="password" type="password" placeholder="Enter Password" class="form-control form-control-sm">
+                                        <div><b>Confirm Password</b></div>
+                                        <input formControlName="confpassword" id="conpassword" type="password" placeholder="Enter Confirm Password" class="form-control form-control-sm">
+                                    </div>
+                                    <button style="margin-top:5px;" [disabled] ="!myformgroup.valid" (click)="btnRegistration()" type="submit" class="btn btn-dark btn-sm btn-outlign-success" >Submit</button>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-center align-items-center "
+                            style="background:rgba(248, 245, 245, 0.5) ;font-size:30px;font-weight: bold;">
+                            <a style="color: black">Register Here</a>
+                            
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-3">
+
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+
+</div>

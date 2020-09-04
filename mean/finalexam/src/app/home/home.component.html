@@ -1,0 +1,209 @@
+
+<div class="container-fluid">
+    <div class="row" style="height: 100vh;">
+        <div class="col">
+        <!--  -->
+            <div class="row sticky-top"
+                style="height:60px;color: white;text-align:center;font-weight:bold;background: rgb(87, 84, 84);">
+                <div class="col-5 d-flex justify-content-start align-items-center">
+                    <img src="./assets/pratilipi.png" id="image" style=" height:50px;
+                    width:75px;
+                    ">
+                </div>
+                <div class="col-5  d-flex justify-content-start align-items-center"
+                    style="color: white;text-align:center;font-weight:bold;font-size:20px">
+                    Pratilipi
+                </div>
+                <div class="col-2 d-flex justify-content-start align-items-center">
+                    <button class="btn btn-light "  style="background-color: darkcyan; color: white;height:6vh;width:25vh; border-radius: 20px" (click)="logout()">
+                        Log Out
+                    </button>
+                </div>    
+            </div>
+
+            <div class="row" style="height:12vh"></div>
+
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-12 col-md-6" style="text-align : center; font-weight:bold;font-size:30px">
+
+                    Pratilipi is India's largest digital platform connecting readers and writers in 12 Indian languages
+                </div>
+                <div class="col-3"></div>
+            </div>
+
+
+            <div class="row" style="border-bottom: 1px solid black;padding-top: 80px">
+                <div class="col-3"></div>
+                <div class=" col-md-6" style="height:30vh;justify-content: center;display: flex;">
+                    <img src="./assets/people.jpg">
+                </div>
+                <div class="col-3"></div>
+            </div>
+
+
+            <div class="row" style="height:10vh;"></div>
+            <div class="row" style="border-bottom: 1px solid black;padding-bottom:83px;">
+                <div class="col-3"></div>
+                <div class="col-12 col-md-6"
+                    style="display: flex;justify-content: space-evenly;align-items: center;padding-top:0;">
+                        <button type="button" class="btn  btn-dark" (click)="btnlanguage()"
+                            style="background-color: darkcyan; color: white;height:6vh;width:25vh; border-radius: 20px">A|English</button>
+                        <button type="button" class="btn btn-dark" (click)="btnlanguage()"
+                            style="background-color: darkcyan; color: white;height:6vh;width:25vh; border-radius: 20px">क|Hindi</button>
+                        <button type="button" class="btn  btn-dark" (click)="btnlanguage()"
+                            style="background-color:darkcyan; color: white;height:6vh;width:25vh; border-radius: 20px">क|Marathi</button>
+                </div>
+                <div class="col-3"></div>
+            </div>
+
+
+
+
+            <div class="row" style="height:90vh;background-color:rgb(242,242,242)" *ngIf="writeandread">
+                <div class="col-3"></div>
+                <div class="col-12 col-md-6">
+                    <div class="row" style="justify-content: space-between; margin-top: 70px;height: 50vh;">
+                       
+                        <div class="col-12 col-md-5" (click)="write()" style="background-color:white;border-radius: 8px">
+                                <div style="padding-left: 90px">
+                                    <img src="./assets/write1.jpg">
+                                </div>
+                                <h3 style="text-align: center;">Write</h3>
+                                <div style="text-align: center;">Discover thousands of stories, poems, articles, magazines,
+                                    novels, essays, etc for free. Read popular genres. Save your favourites in your own
+                                    library. Contents present in the Pratilipi library are filled with endless emotions,
+                                    thoughts, verses, and possibilities.
+                                </div>                           
+                        </div>
+
+                        <div class="col-2"></div>
+
+                        <div class="col-12 col-md-5" (click)="read()" style="background-color:white;border-radius: 8px;">
+                                <div style="padding-left: 90px">
+                                    <img src="./assets/read.jpg">
+                                </div>
+                                <h3 style="text-align: center;">Read</h3>
+                                <div style="text-align: center;">Self-publish on Pratilipi and join the largest community of
+                                    writers. Create new drafts, add images and publish right from the app. Pratilipi
+                                    provides a hassle free and advanced writer panel to make your act of writing a little
+                                    less scary and a whole lot comforting.
+                                </div>         
+                        </div>
+                    </div>
+
+                </div>
+                <div class=" col-3"></div>
+            </div>
+
+
+
+            <div class="row" style="height: 11
+            0vh;" *ngIf="writevalue">
+                <div class="col-3"></div>
+                <div class="col-md-6" [formGroup]="myformgroup">
+                    <div class="row" style="margin-top: 70px;">
+                        <div class="col">
+                            <textarea formControlName="title" rows="2" cols="85" placeholder="Title" style="background:rgba(13, 13, 14, 0.432);margin-top:10px;"></textarea>
+                            <textarea formControlName="story" rows="15" cols="85" placeholder="Enter Content Here" style="background:rgba(13, 13, 14, 0.432);overflow-y: scroll;"></textarea><br>
+                            <button  class="btn btn-default active
+                            btn-outline-dark btn-sm btn-block text-dark" style="background-color: rgb(13, 13, 14, 0.432); color:black;height:6vh;width:25vh; border-radius: 20px" [disabled] ="!myformgroup.valid" (click)="btnStory()" type="submit" class="btn btn-dark btn-sm btn-" >Submit</button>
+
+                        </div>
+
+                    </div>
+                    
+                    <div class="alert alert-success" *ngIf="writealert" role="alert">
+                        Your Story Uploded
+                    </div>
+                    
+                    
+                </div>
+                <div class="col-3"></div>
+
+            </div>
+           
+
+            <div class="row mt-5" *ngIf="readvalue">
+                <div class="col-2"></div>
+
+                <div class="col-8">
+                    <div class="row bg-secondary" style="font-weight:bold;font-size: 20px;">
+                        <div class="col-3 d-flex justify-content-center align-items-center">Writer Name</div>
+                        <div class="col-6 d-flex justify-content-center align-items-center">Story Title</div>
+                        <div class="col-3 d-flex justify-content-center align-items-center"></div>
+
+                    </div>
+                    <div class="row mt-2"  *ngFor="let item of readdata">
+                        <div class="col-3 d-flex justify-content-center align-items-center">{{item.name}}</div>
+                        <div class="col-6 d-flex justify-content-center align-items-center">{{item.title}}</div>
+                        <div class="col-3 d-flex justify-content-center align-items-center"><button class="btn btn-light "  style="background-color: darkcyan; color: white;height:6vh;width:25vh; border-radius: 20px" (click)="readstory(2)">Read Story</button></div>
+                        <div style="background-color:rgb(242,242,242)" *ngIf=true>
+                           
+                            <div>as{{btnreadstory1}}sss{{btnreadstory}}</div>
+                            <div class="d-flex justify-content-center align-items-center">{{item.title}}</div>
+                            <div class="d-flex justify-content-center align-items-center">{{item.story}}</div>
+                        </div>
+                    </div>                  
+                </div>
+
+                <div class="col-2"></div>
+
+
+            </div>
+
+
+            <div class="row" style="padding-top: 80px">
+                <div class="col-1"></div>
+                <div class="col-12 col-md-10" style="height:50vh;justify-content: center;display: flex;">
+
+                    <img src="./assets/footer1.jpg">
+                </div>
+
+
+
+                <div class="col-1"></div>
+
+
+            </div>
+
+
+
+            <footer class="row" style="height:20vh;background-color:rgb(242,242,242);margin-top: 120px">
+
+                <div class="col-3"></div>
+                <div class="col-12 col-md-6" style="justify-content: center;display: flex;align-items: center">
+                    <h4>Pratilipi</h4>&nbsp;
+                    <div> © 2020 Copyright:Pros Tech. Pvt. Ltd.</div>&nbsp;
+
+
+                    <a href="https://www.pratilipi.com//">Email:contact@pratilipi.com </a>
+
+
+
+
+                </div>
+                <div class="col-3"></div>
+
+
+
+
+
+
+            </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>

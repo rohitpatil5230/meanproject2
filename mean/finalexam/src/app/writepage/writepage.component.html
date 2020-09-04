@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row" style="height: 100vh;">
+        <div class="col">
+            <div class="row " style="height:10%;background: rgb(87, 84, 84);">
+                
+                <div class="col-4 d-flex align-items-center" >
+                    <img src="./assets/pratilipi.png" style="height:50px;width:75px;">
+                </div>
+                <div class="col-4 d-flex justify-content-center align-items-center" style="color: white;font-size: 35px;">
+                    Pratilipi
+                </div>
+            </div>
+            <div class="row" style="height: 90%; background: url('./assets/notebook.jpg');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;">
+                <div class="col-md-3">   
+                </div>
+                <div class="col-md-6" [formGroup]="myformgroup">
+                    <textarea formControlName="title" rows="1" cols="85" placeholder="Title" style="background:rgba(13, 13, 14, 0.432);margin-top:10px;"></textarea>
+                    <textarea formControlName="story" rows="13" cols="85" placeholder="Enter Content Here" style="background:rgba(13, 13, 14, 0.432);overflow-y: scroll;"></textarea><br>
+                    <button style="margin-top:5px;" [disabled] ="!myformgroup.valid" (click)="btnStory()" type="submit" class="btn btn-dark btn-sm btn-" >Submit</button>
+                </div>     
+                <div class="col-3 ">
+                    
+                    
+
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+
+</div>
